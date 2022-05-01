@@ -37,25 +37,52 @@ window.addEventListener('DOMContentLoaded', function () {
     //валидация формы
 
     new JustValidate('.about__form', {
+        colorWrong: '#FF6F6F',
         rules: {
             name: {
                 required: true,
                 minLength: 2,
-                maxLength: 20
-
+                maxLength: 20,
+                // password: true
             },
             mail: {
                 required: true,
                 email: true
             },
         },
+        messages: {
+            name: {
+                required: 'Поле обязательно',
+                minLength: 'Ошибка',
+                maxLength: 'Максимальное кол-вл символов: 20',
+                // password: 'Ошибка'
+            },
+            mail: {
+                required: 'Поле обязательно',
+                email: 'Ошибка'
+            },
+        },
+    });
+    new JustValidate('.popup-login__form', {
+        colorWrong: '#FF6F6F',
+        rules: {
+            login: {
+                required: true,
+                minLength: 2,
+                maxLength: 20,
+            },
+            password: {
+                required: true,
+            },
+        },
         // messages: {
-        //     name: {
-        //         required: 'Как вас зовут?',
-        //         minLength: 'Минимальная длина - 2 сивмола'
+        //     login: {
+        //         required: 'Поле обязательно',
+        //         minLength: 'Ошибка',
+        //         maxLength: 'Максимальное кол-вл символов: 20',
         //     },
-        //     mail: {
-        //         email: 'Укажите ваш e-mail'
+        //     password: {
+        //         required: 'Поле обязательно',
         //     },
         // },
     });
@@ -208,7 +235,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const choices = new Choices(element, {
         searchEnabled: false,
         itemSelectText: '',
-
+        renderSelectedChoices: 'always',
     });
 
     //checkbox для изменения при нажатии <530px    НЕ РАБОТАЕТ!!!!!!!!!!!!
