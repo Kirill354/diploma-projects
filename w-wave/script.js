@@ -148,9 +148,11 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
     //перемещение по аккордиону tabs
+    const defaultItem = document.getElementById('default-tab')
     const tabsBtns = document.querySelectorAll('.accordion-guests__link');
     const tabsItems = document.querySelectorAll('.item-guests');
     const defaultImage = document.querySelector('.item-guests-default');
+
 
     tabsBtns.forEach(function (item) {
         item.addEventListener('click', function () {
@@ -194,7 +196,7 @@ window.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-
+    defaultItem.click();
 
     // навигация сайта
     const menuLinks = document.querySelectorAll('.menu__link[data-goto]');

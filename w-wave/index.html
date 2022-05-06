@@ -764,7 +764,8 @@
                             </h3>
                             <div class="accordion-guests__body">
                                 <ul class="accordion-guests__list">
-                                    <li data-tab="#tab_1" data-goto=".guests__info" class="accordion-guests__link">Ольга
+                                    <li id="default-tab" data-tab="#tab_1" data-goto=".guests__info"
+                                        class="accordion-guests__link">Ольга
                                         Мартынова</li>
                                     <li data-tab="#tab_2" data-goto=".guests__info" class="accordion-guests__link">
                                         Евгений Войновский</li>
@@ -976,8 +977,8 @@
                                 <button class="item-guests__btn">Эфиры с гостем</button>
                             </div>
                             <div id="tab_2" class="guests__item item-guests">
-                                <div class="item-guests__image"></div>
-                                <div class="item-guests__social">
+                                <div class="item-guests__image item-guests__image-default"></div>
+                                <!-- <div class="item-guests__social">
                                     <a class="item-guests__social-item">
                                         <svg class="item-guests__social-item-svg" width="20" height="20"
                                             viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1010,11 +1011,11 @@
                                     является
                                     с&nbsp;2016&nbsp;года.
                                 </p>
-                                <button class="item-guests__btn">Эфиры с гостем</button>
+                                <button class="item-guests__btn">Эфиры с гостем</button> -->
                             </div>
                             <div id="tab_3" class="guests__item item-guests">
-                                <div class="item-guests__image"></div>
-                                <div class="item-guests__social">
+                                <div class="item-guests__image item-guests__image-default"></div>
+                                <!-- <div class="item-guests__social">
                                     <a class="item-guests__social-item">
                                         <svg class="item-guests__social-item-svg" width="20" height="20"
                                             viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1047,7 +1048,7 @@
                                     является
                                     с&nbsp;2016&nbsp;года.
                                 </p>
-                                <button class="item-guests__btn">Эфиры с гостем</button>
+                                <button class="item-guests__btn">Эфиры с гостем</button> -->
                             </div>
 
                         </div>
@@ -1532,11 +1533,11 @@
                             href="#">зарегестрируйтесь</a>
                     </div>
                     <form action="https://postman-echo.com/post" method="post" class="popup-login__form">
-                        <label for="" class="popup-login__form-label">
+                        <label class="popup-login__form-label">
                             <input class="popup-login__form-input popup-login__form-input-log form-effect"
                                 placeholder="Логин" type="text" data-validate-field="login">
                         </label>
-                        <label for="" class="popup-login__form-label popup-login__form-label-2">
+                        <label class="popup-login__form-label popup-login__form-label-2">
                             <input class="popup-login__form-input popup-login__form-input-pas form-effect"
                                 placeholder="Пароль" type="password" data-validate-field="password">
                         </label>

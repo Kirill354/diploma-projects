@@ -59,8 +59,14 @@
     --yellow: #F0D288;
 }
 
+/* html {
+    убрать гор скролл
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
 body {
-    height: 100%;
     min-width: 320px;
     font-family: 'Muller', sans-serif;
     font-weight: 400;
@@ -68,6 +74,10 @@ body {
     line-height: 1;
     color: var(--black);
     overflow-x: hidden;
+    /* убрать гор скролл */
+    /* width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; */
 }
 
 a {
@@ -889,9 +899,9 @@ a {
         margin-right: 27px;
     }
 
-    .submenu__item:last-child {
+    /* .submenu__item:last-child {
         margin-right: 34px;
-    }
+    } */
 
     .header__lives__box {
         padding: 3px 24px 4px 12px;
@@ -1153,14 +1163,16 @@ a {
     .submenu__list {
         max-width: 300px;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     .submenu__item {
         display: inline-block;
         flex: 0 1 44%;
+        max-width: 112px;
+        width: 100%;
         margin-right: 0;
-        text-align: right;
+        text-align: left;
     }
 
     .submenu__item:nth-child(odd) {
@@ -1317,6 +1329,7 @@ a {
     .submenu {
         max-height: 202px;
     }
+
 }
 
 /* ------------------------------------------------HERO------------------------------------------------ */
@@ -2118,8 +2131,15 @@ a {
 .brdcsr-item__link {
     position: relative;
     font-style: italic;
+    font-weight: 600;
     font-size: 16px;
     transition: color .3s ease;
+}
+
+@media (max-width:479.98px) {
+    .brdcsr-item__link {
+        font-weight: 400;
+    }
 }
 
 .brdcsr-item__link-svg {
@@ -2352,7 +2372,6 @@ a {
     }
 
     .brdcsr-item__link {
-        padding-right: 30px;
         font-size: 12px;
     }
 
