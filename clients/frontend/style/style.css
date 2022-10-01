@@ -1,0 +1,32 @@
+@import './normalize.css';
+@import './header.css';
+@import './main.css';
+@import './addClient.css';
+@import './deleteClient.css';
+@import './changeClient.css';
+@import './clientContact.css';
+@import './contactIcons.css';
+@import './preloader.css';
+
+
+
+
+:root {
+    --black: #333333;
+    --purple: #9873FF;
+    --grey: #B0B0B0;
+    --red: #F06A4D;
+    --purpleHover: #B89EFF;
+    --purpleActive: #8052FF;
+}
+
+
+body {
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--black);
+    background-color: #E5E5E5;
+}

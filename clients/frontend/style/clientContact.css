@@ -1,0 +1,94 @@
+.client-tr td {
+    border-bottom: 1px solid #c8c5d17e;
+}
+
+.popup-contacts__list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    /* margin-bottom: 25px; */
+}
+
+.popup-contacts__item {
+    display: flex;
+    /* border: 1px solid #C8C5D1; */
+}
+
+.select-contacts {
+    display: flex;
+    align-items: center;
+
+    min-width: 123px;
+    padding: 10px 8px 10px 12px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #E7E5EB;
+    border: 1px solid #C8C5D1;
+    border-right: .5px solid #C8C5D1;
+}
+
+
+.select {
+    appearance: none;
+    background: url('../img/popup/select-arrow.svg') no-repeat right;
+
+    width: 100%;
+}
+
+
+
+
+.input-contacts {
+    flex: 1 0 auto;
+
+    padding: 8px 11px;
+    background-color: transparent;
+    border: 1px solid #C8C5D1;
+    border-right: .5px solid #C8C5D1;
+    border-left: .5px solid #C8C5D1;
+}
+
+.input-contacts::placeholder {
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--grey);
+}
+
+.popup-contacts__deleteBtn {
+    width: 27px;
+    background-color: #E7E5EB;
+    border: 1px solid #C8C5D1;
+    border-left: .5px solid #C8C5D1;
+
+    transition: border-color .2s ease;
+}
+
+.popup-contacts__deleteBtn-svg path {
+    transition: fill .2s ease;
+}
+
+.popup-contacts__deleteBtn:hover {
+    border-color: var(--red);
+}
+
+.popup-contacts__deleteBtn:hover>.popup-contacts__deleteBtn-svg path {
+    fill: var(--red);
+}
+
+
+/* кнопки изменить и удалить клиента */
+#changeClient,
+#deleteClient {
+    transition: color .3s ease;
+}
+
+#changeClient:hover {
+    color: var(--purple);
+}
+
+#deleteClient:hover {
+    color: var(--red);
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients</title>
+
+    <!-- шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- файлы стилей -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- тчока входа приложения -->
+    <script type="module" src="js/index.js"></script>
+</head>
+
+<body>
+    <main class="main">
+        <div class="main__container">
+            <h2 class="main__title">Клиенты</h2>
+            <table class="table clients-table" id="clients-table">
+                <thead>
+                    <th>
+                        <div class="clients-table__thBox">
+                            <span data-prop="ID" class="th-main-span">ID</span>
+                            <span class="th-sec-span"><img src="img/arrow-up.svg" alt="Стрелка вверх"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <span data-prop="FIO" class="th-main-span">Фамилия Имя Отчество</span>
+                        <span class="th-sec-span"><img src="img/arrow-down.svg" alt="Стрелка вверх">А-Я</span>
+                    </th>
+                    <th>
+                        <span data-prop="createStartTime" class="th-main-span">Дата и время создания</span>
+                        <span class="th-sec-span"><img src="img/arrow-down.svg" alt="Стрелка вверх"></span>
+                    </th>
+                    <th>
+                        <span data-prop="lastChange" class="th-main-span">Последние изменения</span>
+                        <span class="th-sec-span"><img src="img/arrow-down.svg" alt="Стрелка вверх"></span>
+                    </th>
+                    <th>
+                        <span>Контакты</span>
+                    </th>
+                    <th>
+                        <span>Действия</span>
+                    </th>
+                </thead>
+                <tbody id="clients-list">
+                    <!-- <tr>
+                        <td>12345</td>
+                        <td>Скворцов Денис Юрьевич</td>
+                        <td>21.02.2021 12:440</td>
+                        <td>21.02.2021</td>
+                        <td>Телефон</td>
+                        <td><button>Изменить</button>
+                            <button>Удалить</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div id="addNewClient" class="main__btn-box">
+                <svg class="main__btn-svg" width="23" height="16" viewbox="0 0 23 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"
+                        fill="#9873FF" />
+                </svg>
+                <button class="main__btn-button">Добавить клиента</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- popups -->
+
+    <!-- добавление нового клиента -->
+    <div id="popup_1" class="popup popup_1">
+        <div class="popup-body popup-login">
+            <div class="popup-content popup-login__content">
+                <a id="closePopupAdd" class="popup-login__close">
+                    <svg width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.2333 1.73333L15.2666 0.766664L8.49991 7.53336L1.73324 0.766696L0.766576 1.73336L7.53324 8.50003L0.766603 15.2667L1.73327 16.2333L8.49991 9.46669L15.2666 16.2334L16.2332 15.2667L9.46657 8.50003L16.2333 1.73333Z"
+                            fill="#B0B0B0" />
+                    </svg>
+                </a>
+                <div class="popup__title popup-login__title">Новый клиент</div>
+                <form id="addNewClientForm" class="popup-login__form">
+                    <label class="popup-login__form-label">
+                        <input id="clientSurname" class="popup-login__form-input" placeholder="Фамилие*" type="text">
+                    </label>
+                    <label class="popup-login__form-label popup-login__form-label-2">
+                        <input id="clientName" class="popup-login__form-input" placeholder="Имя*" type="text">
+                    </label>
+                    <label class="popup-login__form-label popup-login__form-label-2">
+                        <input id="clientLastname" class="popup-login__form-input" placeholder="Отчество" type="text">
+                    </label>
+                    <div class="popup-login__contacts popup-contacts">
+                        <ul class="popup-contacts__list">
+                        </ul>
+                        <div>
+                            <a class="popup-contacts__title">
+                                <svg class="popup-contacts__title-svg" width="14" height="14" viewbox="0 0 14 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.00001 3.66659C6.63334 3.66659 6.33334 3.96659 6.33334 4.33325V6.33325H4.33334C3.96668 6.33325 3.66668 6.63325 3.66668 6.99992C3.66668 7.36659 3.96668 7.66659 4.33334 7.66659H6.33334V9.66659C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66659V7.66659H9.66668C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66668 6.33325H7.66668V4.33325C7.66668 3.96659 7.36668 3.66659 7.00001 3.66659ZM7.00001 0.333252C3.32001 0.333252 0.333344 3.31992 0.333344 6.99992C0.333344 10.6799 3.32001 13.6666 7.00001 13.6666C10.68 13.6666 13.6667 10.6799 13.6667 6.99992C13.6667 3.31992 10.68 0.333252 7.00001 0.333252ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.93992 1.66668 6.99992C1.66668 4.05992 4.06001 1.66659 7.00001 1.66659C9.94001 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.94001 12.3333 7.00001 12.3333Z"
+                                        fill="#9873FF" />
+                                </svg>
+                                Добавить контакт
+                            </a>
+                        </div>
+                    </div>
+                    <div class="popup-login__btns">
+                        <button type="submit" class="popup-login__accessBtn">Сохранить</button>
+                        <button type="reset" class="popup-login__cancelBtn">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- удаление клиента -->
+    <div id="popup_2" class="popup popup_2">
+        <div class="popup-body popup-delete">
+            <div class="popup-content popup-delete__content">
+                <a class="popup-delete__close">
+                    <svg width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.2333 1.73333L15.2666 0.766664L8.49991 7.53336L1.73324 0.766696L0.766576 1.73336L7.53324 8.50003L0.766603 15.2667L1.73327 16.2333L8.49991 9.46669L15.2666 16.2334L16.2332 15.2667L9.46657 8.50003L16.2333 1.73333Z"
+                            fill="#B0B0B0" />
+                    </svg>
+                </a>
+                <div class="popup__title popup-delete__title">Удалить клиента</div>
+                <div class="popup__subtitle popup-delete__subtitle">Вы действительно хотите удалить данного клиента?
+                </div>
+
+                <div class="popup-delete__btns">
+                    <button type="submit" class="popup-delete__accessBtn">Удалить</button>
+                    <button type="reset" class="popup-delete__cancelBtn">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- изменение клиента -->
+    <div id="popup_3" class="popup popup_3">
+        <div class="popup-body popup-change">
+            <div class="popup-content popup-change__content">
+                <a class="popup-change__close">
+                    <svg width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.2333 1.73333L15.2666 0.766664L8.49991 7.53336L1.73324 0.766696L0.766576 1.73336L7.53324 8.50003L0.766603 15.2667L1.73327 16.2333L8.49991 9.46669L15.2666 16.2334L16.2332 15.2667L9.46657 8.50003L16.2333 1.73333Z"
+                            fill="#B0B0B0" />
+                    </svg>
+                </a>
+                <div class="popup__title popup-change__title">Изменить клиента <span id="changeClientId"></span></div>
+                <form class="popup-change__form">
+                    <label class="popup-change__form-label">
+                        <input id="changeClientSur" class="popup-change__form-input" placeholder="Фамилие*" type="text">
+                    </label>
+                    <label class="popup-login__form-label popup-login__form-label-2">
+                        <input id="changeClientName" class="popup-change__form-input" placeholder="Имя*" type="text">
+                    </label>
+                    <label class="popup-login__form-label popup-login__form-label-2">
+                        <input id="changeClientLast" class="popup-change__form-input" placeholder="Отчество"
+                            type="text">
+                    </label>
+                    <div class="popup-change__contacts popup-change-contacts">
+                        <ul class="popup-change-contacts__list">
+                        </ul>
+                        <div>
+                            <a class="popup-change-contacts__title">
+                                <svg class="popup-contacts__title-svg" width="14" height="14" viewbox="0 0 14 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.00001 3.66659C6.63334 3.66659 6.33334 3.96659 6.33334 4.33325V6.33325H4.33334C3.96668 6.33325 3.66668 6.63325 3.66668 6.99992C3.66668 7.36659 3.96668 7.66659 4.33334 7.66659H6.33334V9.66659C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66659V7.66659H9.66668C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66668 6.33325H7.66668V4.33325C7.66668 3.96659 7.36668 3.66659 7.00001 3.66659ZM7.00001 0.333252C3.32001 0.333252 0.333344 3.31992 0.333344 6.99992C0.333344 10.6799 3.32001 13.6666 7.00001 13.6666C10.68 13.6666 13.6667 10.6799 13.6667 6.99992C13.6667 3.31992 10.68 0.333252 7.00001 0.333252ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.93992 1.66668 6.99992C1.66668 4.05992 4.06001 1.66659 7.00001 1.66659C9.94001 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.94001 12.3333 7.00001 12.3333Z"
+                                        fill="#9873FF" />
+                                </svg>
+                                Добавить контакт
+                            </a>
+                        </div>
+                    </div>
+                    <div class="popup-change__btns">
+                        <button type="submit" class="popup-change__accessBtn">Сохранить</button>
+                        <button type="reset" class="popup-change__deleteBtn">Удалить клиента</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
