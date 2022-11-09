@@ -75,16 +75,6 @@ window.addEventListener('DOMContentLoaded', function () {
                 required: true,
             },
         },
-        // messages: {
-        //     login: {
-        //         required: 'Поле обязательно',
-        //         minLength: 'Ошибка',
-        //         maxLength: 'Максимальное кол-вл символов: 20',
-        //     },
-        //     password: {
-        //         required: 'Поле обязательно',
-        //     },
-        // },
     });
 
 
@@ -179,21 +169,22 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    if (window.innerWidth <= 600) {
+        const accordionLinks = document.querySelectorAll('.accordion-guests__link[data-goto]');
+        accordionLinks.forEach(accordionLink => {
+            accordionLink.addEventListener("click", onMenuLinkClick)
+        });
+        function onMenuLinkClick(e) {
+            const accordionLink = e.target;
+            if (accordionLink.dataset.goto && document.querySelector(accordionLink.dataset.goto)) {
+                const gotoBlock = document.querySelector(accordionLink.dataset.goto);
+                const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY;
 
-    const accordionLinks = document.querySelectorAll('.accordion-guests__link[data-goto]');
-    accordionLinks.forEach(accordionLink => {
-        accordionLink.addEventListener("click", onMenuLinkClick)
-    });
-    function onMenuLinkClick(e) {
-        const accordionLink = e.target;
-        if (accordionLink.dataset.goto && document.querySelector(accordionLink.dataset.goto)) {
-            const gotoBlock = document.querySelector(accordionLink.dataset.goto);
-            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY;
-
-            window.scrollTo({
-                top: gotoBlockValue,
-                behavior: "smooth"
-            });
+                window.scrollTo({
+                    top: gotoBlockValue,
+                    behavior: "smooth"
+                });
+            }
         }
     }
     defaultItem.click();
