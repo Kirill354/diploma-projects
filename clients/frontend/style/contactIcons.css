@@ -1,0 +1,80 @@
+.contact-icon__box {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    max-width: 108px;
+    align-items: center;
+}
+
+.contact-icon__svg {
+    cursor: pointer;
+}
+
+.contact-icon__svg path {
+    transition: opacity .2s ease;
+}
+
+.contact-icon__svg:hover path {
+    opacity: 1;
+}
+
+.contact-icon__svg-extr g {
+    transition: opacity .2s ease;
+}
+
+.contact-icon__svg-extr:hover g {
+    opacity: 1;
+}
+
+.contact-icon__link {
+    position: relative;
+}
+
+/* тултип */
+.contact-icon__tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 8px 15px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background-color: #424242;
+    white-space: nowrap;
+
+    transform: translate(-50%, -150%);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contact-icon__link:hover .contact-icon__tooltip {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s ease;
+}
+
+.contact-icon__tooltip::after {
+    content: '';
+    position: absolute;
+    /* Абсолютное позиционирование */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    /* Положение треугольника */
+    border: 6px solid transparent;
+    /* Прозрачные границы */
+    border-top: 6px solid #424242;
+    /* Добавляем треугольник */
+}
+
+.contact-icon__tooltip-value {
+    padding-left: 5px;
+    font-weight: 700;
+    color: var(--purple);
+    text-decoration: underline;
+}

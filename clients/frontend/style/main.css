@@ -1,0 +1,96 @@
+.main__container {
+    position: relative;
+
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 40px 15px;
+}
+
+.main__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 26px;
+}
+
+#clients-list {
+    position: relative;
+}
+
+.clients-table tr {
+    border: none;
+}
+
+.clients-table th {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: var(--grey);
+}
+
+.th-main-span {
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.th-sec-span {
+    color: var(--purple);
+}
+
+.th-sec-span img {
+    padding-top: 3px;
+}
+
+
+
+.main__btn-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: inline-block;
+    cursor: pointer;
+
+    background-color: transparent;
+    padding: 12px 26px;
+    border: 1px solid #9873FF;
+
+    transition: background-color .2s ease;
+}
+
+.main__btn-button {
+    margin-left: 10px;
+    font-weight: 600;
+    color: var(--purple);
+
+    transition: color .2s ease;
+}
+
+.main__btn-svg path {
+    transition: fill .2s ease;
+}
+
+
+
+/* анимация */
+.th-main-span:hover {
+    color: var(--black);
+}
+
+
+.main__btn-box:hover {
+    background-color: var(--purpleHover);
+}
+
+.main__btn-box:active {
+    background-color: var(--purpleActive);
+}
+
+.main__btn-box:hover>.main__btn-button {
+    color: white
+}
+
+.main__btn-box:hover>.main__btn-svg path {
+    fill: white
+}

@@ -1,0 +1,149 @@
+.popup_3._active .popup-change__content {
+    opacity: 1;
+    transform: perspective(600px) translate(0, 0) rotateX(0);
+}
+
+.popup-change__close {
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+
+.popup-change__form {
+    position: relative;
+
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-change__form-label {
+    position: relative;
+}
+
+.popup-change__form-label:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+
+.popup-change__form-input {
+    display: block;
+    height: 25px;
+    width: 100%;
+    max-width: 390px;
+    padding: 4px;
+    border-bottom: 1px solid var(--grey);
+    color: var(--black);
+}
+
+
+.popup-change__form-input::placeholder {
+    color: var(--grey);
+}
+
+
+
+.popup-change-contacts {
+    position: relative;
+
+    /* background: #c8c5d148; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.popup-change-contacts::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: -30px;
+    left: -30px;
+    background: #c8c5d148;
+}
+
+.popup-change-contacts__title {
+    font-weight: 600;
+    color: var(--black);
+
+    transition: color .2s ease;
+}
+
+#changeClientId {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 5px;
+    color: #B0B0B0
+}
+
+.popup-change-contacts__title svg path {
+    transition: fill .2s ease;
+}
+
+
+.popup-change-contacts__title:hover {
+    color: var(--purple);
+}
+
+.popup-change-contacts__list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.popup-change__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.popup-change__accessBtn {
+    align-self: center;
+
+    color: white;
+    font-weight: 600;
+
+    padding: 12px 35px;
+    background-color: var(--purple);
+
+    transition: background-color .2s ease;
+}
+
+.popup-change__deleteBtn {
+    align-self: center;
+
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--black);
+    text-decoration: underline;
+
+    transition: color .2s ease;
+}
+
+/* effects */
+.popup-change__accessBtn:hover {
+    background-color: var(--purpleHover);
+}
+
+.popup-change__accessBtn:active {
+    background-color: var(--purpleActive);
+}
+
+.popup-change__deleteBtn:hover {
+    color: rgb(254, 52, 52);
+}
+
+.popup-change__deleteBtn:active {
+    color: red;
+}
